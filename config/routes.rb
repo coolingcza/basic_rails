@@ -3,6 +3,8 @@ BasicRailsApp::Application.routes.draw do
   # first created -> highest priority.
   
   match 'books/list' => 'books#index'
+  match 'books/new' => 'books#new'
+  match 'books/create' => 'books#confirm_create'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
