@@ -1,5 +1,18 @@
 <h1>#Confirm_Create</h1>
 
-<%= params.each{|x| puts x } %>
-<%= @error_message %><br>
-<%= @new_book %>
+
+<% if @new_book.valid? %>
+  <div id="new_book">
+    New Book Created:<br>
+    ID: <%= @new_book.id %><br>
+    Title: <%= @new_book.title %><br>
+    Rating: <%= @new_book.rating %><br>
+  </div>
+<% else %>
+  <div id="error_msg">
+    <%= @error_message %><br>
+  </div>
+<% end %>
+
+<br><a href="list">Index</a>
+

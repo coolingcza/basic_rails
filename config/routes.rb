@@ -2,9 +2,14 @@ BasicRailsApp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match 'books/list' => 'books#index'
-  match 'books/new' => 'books#new'
-  match 'books/create' => 'books#confirm_create'
+  get 'books/list' => 'books#index'
+  get 'books/new' => 'books#new'
+  post 'books/new', to: 'books#create'
+  get 'books/select' => 'books#select'
+  post 'books/delete' => 'books#delete'
+  get 'books/:id', to: 'books#show'
+  get 'books/:id/edit', to: 'books#edit'
+  post 'books/:id/edit', to: 'books#update'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

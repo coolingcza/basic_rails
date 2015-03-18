@@ -1,4 +1,16 @@
+<nav>
+  <a href="new">Add New Book</a> |
+  <a href="select">Delete Book</a>
+</nav>
+
 <h1>Book List</h1>
-<% @books.each do |b| %>
-  <%= b.title %><br>
-<% end %>
+<ul id="book_list">
+  
+  <% @books.each do |b| %>
+    <li><%= b.title %>
+      <a href="<%= b.id %>">View</a>
+      <a href="<%= b.id %>/edit">Edit</a>
+    </li>
+  <% end %>
+  
+</ul>
