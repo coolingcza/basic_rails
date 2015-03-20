@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Create New Publisher:</h1>
+
+  <%= form_for @publisher, url: {action: "create"} do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>

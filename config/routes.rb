@@ -1,15 +1,30 @@
 BasicRailsApp::Application.routes.draw do
+
+  get "publishers/edit"
+
+  get "publishers/update"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  get 'books/list' => 'books#index'
-  get 'books/new' => 'books#new'
-  post 'books/new', to: 'books#create'
-  get 'books/select' => 'books#select'
-  post 'books/delete' => 'books#delete'
-  get 'books/:id', to: 'books#show'
-  get 'books/:id/edit', to: 'books#edit'
-  post 'books/:id/edit', to: 'books#update'
+  get '/books', to: 'books#index', as: 'books'
+  get '/books/new', to: 'books#new', as: 'new_book'
+  post '/books/new', to: 'books#create'
+  get '/books/select' => 'books#select'
+  post '/books/delete' => 'books#delete'
+  get '/books/:id', to: 'books#show', as: 'book'
+  get '/books/:id/edit', to: 'books#edit', as: 'edit_book'
+  post '/books/:id/edit', to: 'books#update'
+  
+  get '/publishers', to: 'publishers#index', as: 'publishers'
+  get '/publishers/new', to: 'publishers#new', as: 'new_publisher'
+  post '/publishers/create', to: 'publishers#create'
+  get '/publishers/select', to: 'publishers#select'
+  post '/publishers/delete', to: 'publishers#destroy', as: 'delete'
+  get 'publishers/:id', to: 'publishers#show'
+  get 'publishers/:id/books', to: 'publishers#books'
+  # get 'books/:id/edit', to: 'books#edit'
+#   post 'books/:id/edit', to: 'books#update'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

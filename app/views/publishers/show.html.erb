@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><p>Publisher Information:</p></h1>
+
+  <ul>
+    <li>ID: <%= @publisher.id %></li>
+    <li>Name: <%= @publisher.name %></li>
+  </ul>
+  
+  <div class="links">
+    <br><a href="/publishers/<%= @publisher.id %>/books">Books</a>
+    <br><a href="/publishers">Publisher Index</a>
+    <br><%= link_to "Book Index" books_path %>
+  </div>
+</div>

@@ -1,21 +1,13 @@
-
 <div class="container">
-  <h1><p>Book List</p></h1>
+  <h1><p><%= @publisher.name %></p></h1>
+
   <ul class="many">
-  
     <% @books.each do |b| %>
-      <li><%= b.title %>
+      <li>
+        <%= b.title %>
         <a href="/books/<%= b.id %>/edit">Edit</a>
         <a href="/books/<%= b.id %>">View</a>
       </li>
     <% end %>
-  
   </ul>
 </div>
-
-<nav>
-  <ul>
-    <li><a href="/books/new">Add New Book</a></li>
-    <li><a href="/books/select">Delete Book</a></li>
-  </ul>
-</nav>

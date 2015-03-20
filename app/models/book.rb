@@ -1,6 +1,8 @@
 class Book < ActiveRecord::Base
   
-  validates :title, :rating, presence: true
-  attr_accessible :title, :rating
+  belongs_to :publisher
+  
+  validates :title, :rating, :publisher_id, presence: true
+  attr_accessible :title, :rating, :publisher_id
   
 end

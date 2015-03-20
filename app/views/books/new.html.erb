@@ -6,6 +6,12 @@
   <input type="radio" name="rating" value="Good">Good<br>
   <input type="radio" name="rating" value="Mediocre">Mediocre<br>
   <input type="radio" name="rating" value="Poor">Poor<br>
+  Publisher:<br>
+  <select name="publisher_id">
+    <% @publishers.each do |p| %>
+      <option value="<%= p.id %>"><%= p.name %></option>
+    <% end %>
+  </select><br>
 
   <input type="submit">
 </form>

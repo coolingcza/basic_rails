@@ -1,3 +1,89 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #606060;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+nav {
+  width: 90%;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  margin: 0 auto;
+  align-content: center;
+  font-size: 1em;
+  margin-top: 1.5em;
+
+  
+  ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 90%;
+  }
+
+  li { 
+    display: inline-block; 
+    margin-right: 1em;
+  }
+
+  a {
+    display: inline-block;
+    padding: 1em 0;
+    text-decoration: none;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  padding-top: .05em;
+  padding-bottom: .67em;
+  margin-top: 1.5em;
+  
+  h1 {
+    
+    p {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    
+    li {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  ul.many{
+    max-width: 300px;
+    li {
+      a {
+//        margin-left: 8px;
+        float: right;
+      }
+    }
+  }
+  
+  .links {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+}

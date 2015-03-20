@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     else
       @error_message = "Invalid book information."
     end
-    render "confirm_create"
+    render "/books/confirm_create"
   end
   
   def select
@@ -22,7 +22,7 @@ class BooksController < ApplicationController
   def delete
     @book = Book.find(params["id"])
     @book.destroy
-    render "confirm_destroy"
+    render "/books/confirm_destroy"
   end
   
   def show
@@ -31,12 +31,15 @@ class BooksController < ApplicationController
   
   def edit
     @book = Book.find(params[:id])
+    @publishers = Publisher.all
   end
   
   def update
     @book = Book.find(params["id"])
-    @book.update_attributes({title: params["title"], rating: params["rating"]})
-    render "show"
+    @book.update_attributes({title: params["title"], 
+      rating: params["rating"],
+      publisher_id: params["publisher_id"]})
+    render "/books/show"
   end
   
 end

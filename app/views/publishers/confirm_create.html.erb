@@ -1,0 +1,16 @@
+<h1>#Confirm_Create</h1>
+
+
+<% if @publisher.valid? %>
+  <div id="new_book">
+    New Publisher Created:<br>
+    ID: <%= @publisher.id %><br>
+    Name: <%= @publisher.name %><br>
+  </div>
+<% else %>
+  <div id="error_msg">
+    <%= @error_message %><br>
+  </div>
+<% end %>
+
+<br><%= link_to "Index", publishers_path %>

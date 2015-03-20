@@ -1,7 +1,9 @@
 <h1>Update Book Information</h1>
 <form action="edit" method="post">
+  
   Change title:<br>
   <input type="text" name="title" value="<%= @book.title %>"><br><br>
+  
   Change rating:<br>  
   <% ["Great","Good","Mediocre","Poor"].each do |r| %>
     <% if r == @book.rating %>
@@ -10,6 +12,14 @@
       <input type="radio" name="rating" value=<%= r %>><%= r %><br>
     <% end %>
   <% end %>
+    
+  Change publisher:<br>
+  <select name="publisher_id">
+    <% @publishers.each do |p| %>
+      <option value="<%= p.id %>"><%= p.name %></option>
+    <% end %>
+  </select>
+  
   <br><input type="submit">
   <input type="hidden" name="id" value=<%= @book.id %>>
 </form>

@@ -1,0 +1,9 @@
+<h2>Select Book to Remove:</h2>
+<form action="/publishers/delete" method="post">
+  <select name="id">
+    <% @publishers.each do |p| %>
+      <option value="<%= p.id %>"><%= p.name %></option>
+    <% end %>
+  </select>
+  <input type="submit">
+</form>

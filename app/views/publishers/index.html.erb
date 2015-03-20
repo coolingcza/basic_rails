@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h1><p>Publisher List</p></h1>
+  <ul class="many">
+  
+    <% @publishers.each do |p| %>
+      <li><%= p.name %>
+        <a href="/publishers/<%= p.id %>/edit">Edit</a>
+        <a href="/publishers/<%= p.id %>">View</a>
+      </li>
+    <% end %>
+  
+  </ul>
+</div>
+
+<nav>
+  <ul>
+    <li><%= link_to "Add New Publisher", new_publisher_path %></li>
+    <li><a href="/publisher/select">Delete Publisher</a></li>
+  </ul>
+</nav>

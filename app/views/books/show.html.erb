@@ -1,7 +1,22 @@
-<h1>Book Information:</h1>
+<div class="container">
+  <h1><p>Book Information:</p></h1>
+  
+  <ul>
+    <li>ID: <%= @book.id %></li>
+    <li>Title: <%= @book.title %></li>
+    <li>Rating: <%= @book.rating %><li>
+    <% if @book.publisher %>
+      <li>
+        Publisher: <a href="/publishers/<%= @book.publisher.id %>">
+          <%= @book.publisher.name %></a>
+      </li>
+    <% end %>
+  </ul>
 
-ID: <%= @book.id %><br>
-Title: <%= @book.title %><br>
-Rating: <%= @book.rating %><br>
+</div>
 
-<br><a href="/books/list">Index</a>
+<nav>
+  <ul>
+    <li><a href="/books">Index</a></li>
+  </ul>
+</nav>
